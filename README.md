@@ -1,16 +1,16 @@
-# numberguessingapp
+# Number Guessing App
+A fun Flutter application where users try to guess a randomly selected number. The app allows users to guess a number between 0 and 20 and provides hints after each guess. Users have 5 attempts to get it right.
 
-A new Flutter project.
+## Features
+- User-friendly interface
+- Random number generation
+- Hints based on user guesses
+- Separate screens for game results
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## App Screenshots
+<div style="display: flex; justify-content: space-around;">
+    <img src="images/1.png" alt="Screenshot" width="150" />
+    <img src="images/2.png" alt="Screenshot" width="150" />
+    <img src="images/3.png" alt="Screenshot" width="150" />
+  
+</div>
