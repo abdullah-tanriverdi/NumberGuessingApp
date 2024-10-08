@@ -1,15 +1,16 @@
-import 'dart:math';
+import 'dart:math'; // Rastgele sayı üretmek için gerekli
 
 import 'package:flutter/material.dart';
 
 class SonucEkrani extends StatefulWidget {
   // const SonucEkrani({super.key});
 
-  late bool sonuc;
-  SonucEkrani({required this.sonuc});
+  late bool sonuc; // Kazanma ya da kaybetme sonucunu tutan değişken
+  SonucEkrani(
+      {required this.sonuc}); // Yapıcı metod, sonuc değerini zorunlu kılar
 
   @override
-  State<SonucEkrani> createState() => _SonucEkraniState();
+  State<SonucEkrani> createState() => _SonucEkraniState(); // State oluşturma
 }
 
 class _SonucEkraniState extends State<SonucEkrani> {
@@ -17,36 +18,46 @@ class _SonucEkraniState extends State<SonucEkrani> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text("Sonuç Ekranı"),
+          backgroundColor: Theme.of(context)
+              .colorScheme
+              .inversePrimary, // Uygulama çubuğu rengi
+          title: Text("Sonuç Ekranı"), // Ekranın başlığı
         ),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment:
+                MainAxisAlignment.spaceEvenly, // Elemanları dikey olarak ortala
             children: [
-              widget.sonuc
-                  ? Image.asset("resimler/mutlu_resim.png")
-                  : Image.asset("resimler/uzgun_resim.png"),
+              widget
+                      .sonuc // Sonuç doğruysa mutlu, yanlışsa üzgün resmini göster
+                  ? Image.asset(
+                      "resimler/mutlu_resim.png") // Kazanma durumu resmi
+                  : Image.asset(
+                      "resimler/uzgun_resim.png"), // Kaybetme durumu resmi
               Text(
-                widget.sonuc ? "Kazandınız" : "Kaybettiniz",
+                widget.sonuc
+                    ? "Kazandınız"
+                    : "Kaybettiniz", // Sonuca göre metin
                 style: TextStyle(
-                  color: Colors.black54,
-                  fontSize: 36,
+                  color: Colors.black54, // Metin rengi
+                  fontSize: 36, // Metin boyutu
                 ),
               ),
               SizedBox(
-                  width: 200,
-                  height: 50,
-                  child: ElevatedButton(
-                    child: Text("Tekrar dene"),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.lightBlue,
-                      foregroundColor: Colors.white,
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ))
+                width: 200, // Buton genişliği
+                height: 50, // Buton yüksekliği
+                child: ElevatedButton(
+                  child: Text("Tekrar dene"), // Buton üzerindeki yazı
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.lightBlue, // Buton arka plan rengi
+                    foregroundColor: Colors.white, // Buton yazı rengi
+                  ),
+                  onPressed: () {
+                    Navigator.pop(
+                        context); // Tekrar dene butonuna basıldığında önceki ekrana dön
+                  },
+                ),
+              )
             ],
           ),
         ));
